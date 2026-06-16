@@ -12,17 +12,15 @@
      AMPLITUDE — STEP 1 of 2: Analytics (Browser SDK)
      This loads the core analytics library.
      ============================================================ -->
-<script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/script/a5272352eed710290430ed77b5e6b27a.js"></script>
 
 <!-- ============================================================
      AMPLITUDE — STEP 2 of 2: Guides and Surveys (Engagement SDK)
-     IMPORTANT: this is the part CDK hasn't added yet.
-     Copy the EXACT install snippet from the demo org:
-        Amplitude -> Guides and Surveys -> Settings -> Installation
-     and paste it OVER the block below if it differs. The snippet
-     can vary by org (and is different for the EU data region).
+     This is the per-key loader for Guides and Surveys. It MUST load
+     after the analytics script above. If you ever swap to a different
+     project, change the key in BOTH of these URLs to that project's key.
      ============================================================ -->
-<script src="https://cdn.amplitude.com/libs/engagement-browser-0.4.3-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/script/a5272352eed710290430ed77b5e6b27a.engagement.js"></script>
 
 <style>
   :root{
@@ -397,7 +395,7 @@
    Leave it as-is and the app still runs; the demo strip will
    just say "not connected" until a real key is added.
    ============================================================ */
-const AMPLITUDE_API_KEY = "a5272352eed710290430ed77b5e6b27a";
+const AMPLITUDE_API_KEY = "REPLACE_WITH_YOUR_DEMO_ORG_API_KEY";
 const SERVER_ZONE = "US"; // set to "EU" only if your demo org is in the EU data region
 
 let ampReady = false;
@@ -412,6 +410,7 @@ let ampReady = false;
     }
     window.amplitude.init(AMPLITUDE_API_KEY, {
       serverZone: SERVER_ZONE,
+      fetchRemoteConfig: true, // required for Guides and Surveys to load their config
       autocapture: { elementInteractions: true } // page views + clicks; precision events still fire below
     });
     ampReady = true;
