@@ -12,7 +12,7 @@
      AMPLITUDE — STEP 1 of 2: Analytics (Browser SDK)
      This loads the core analytics library.
      ============================================================ -->
-<script src="https://cdn.amplitude.com/script/8b33a0b6f5a435dc46151a897260d4c0.js"></script>
+<script src="https://cdn.amplitude.com/script/1eb6746543cb848f287d7278d846efe4.js"></script>
 
 <!-- ============================================================
      AMPLITUDE — STEP 2 of 2: Guides and Surveys (Engagement SDK)
@@ -20,7 +20,7 @@
      after the analytics script above. If you ever swap to a different
      project, change the key in BOTH of these URLs to that project's key.
      ============================================================ -->
-<script src="https://cdn.amplitude.com/script/8b33a0b6f5a435dc46151a897260d4c0.engagement.js"></script>
+<script src="https://cdn.amplitude.com/script/1eb6746543cb848f287d7278d846efe4.engagement.js"></script>
 
 <!-- ============================================================
      AMPLITUDE — STEP 3: attach the Guides & Surveys plugin, then init.
@@ -34,7 +34,7 @@
     window.amplitude.add(window.engagement.plugin());
   }
   if (window.amplitude) {
-    window.amplitude.init("8b33a0b6f5a435dc46151a897260d4c0", { autocapture: true });
+    window.amplitude.init("1eb6746543cb848f287d7278d846efe4", { autocapture: true });
   }
 </script>
 
@@ -411,7 +411,7 @@
    Leave it as-is and the app still runs; the demo strip will
    just say "not connected" until a real key is added.
    ============================================================ */
-const AMPLITUDE_API_KEY = "8b33a0b6f5a435dc46151a897260d4c0";
+const AMPLITUDE_API_KEY = "1eb6746543cb848f287d7278d846efe4";
 const SERVER_ZONE = "US"; // analytics + the Guides & Surveys plugin are initialized in the <head>
 
 // The SDKs are initialized in the <head> via Amplitude's official per-key snippet.
